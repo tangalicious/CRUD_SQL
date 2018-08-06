@@ -1,0 +1,24 @@
+/*************************************************
+Name: crud_StandardFeedRead
+Author: Chris Tang
+Created: 8/06/2018
+Description: Read (CRUD)
+
+Note: Read by primary key Id with SELECT statement	
+
+**************************************************/
+
+IF OBJECT_ID('crud_StandardFeedRead') IS NOT NULL
+BEGIN 
+    DROP PROC crud_StandardFeedRead
+END 
+GO
+CREATE PROC crud_StandardFeedRead
+    @Id int
+AS 
+BEGIN 
+	SELECT *
+	FROM Feeds.StandardFeed
+	WHERE (Id = @Id)
+END
+GO
