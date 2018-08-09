@@ -15,7 +15,7 @@ BEGIN
 END; 
 GO
 
-CREATE PROC StandardFeed
+CREATE PROC StandardFeedUpdate
 	@Id INT,
 	@Name VARCHAR(max),
 	@Description VARCHAR(max),
@@ -31,7 +31,7 @@ CREATE PROC StandardFeed
 	@Activate datetime,
 AS
 	BEGIN
-		UPDATE Feed.StandardFeed
+		UPDATE Feed.StandardFeedUpdate
 		SET
 			Name = @Name,
 			Description = @Description,
