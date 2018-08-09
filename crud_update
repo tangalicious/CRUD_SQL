@@ -8,10 +8,10 @@ Note: Update by primary key Id
 
 **************************************************/
 
-IF OBJECT_ID('StandardFeed') IS NOT NULL
+IF OBJECT_ID('StandardFeedUpdate') IS NOT NULL
 BEGIN
 	DROP PROC
-		StandardFeed;
+		StandardFeedUpdate;
 END; 
 GO
 
@@ -41,12 +41,10 @@ AS
 			Type = @Type,
 			Note = @Note,
 			Active = @Active,
-			ModifiedDate = @ModifiedDate,
+			ModifiedDate = @GetDate(),
 			ModifiedBy = @ModifiedBy,
 			ExpirationDate = @ExpirationDate,
 			Activate = @Activate
 		WHERE Id = @Id;
 	END;
 GO
-
---Needs to utilize TSQL "GetDate" 
