@@ -1,5 +1,5 @@
 /*************************************************
-Name: crud_StandardFeedUpdate
+Name: StandardFeedUpdate
 Author: Chris Tang
 Created: 8/06/2018
 Description: Update (CRUD)
@@ -8,14 +8,14 @@ Note: Update by primary key Id
 
 **************************************************/
 
-IF OBJECT_ID('crud_StandardFeed') IS NOT NULL
+IF OBJECT_ID('StandardFeed') IS NOT NULL
 BEGIN
 	DROP PROC
-		crud_StandardFeed;
+		StandardFeed;
 END; 
 GO
 
-CREATE PROC crud_StandardFeed
+CREATE PROC StandardFeed
 	@Id INT,
 	@Name VARCHAR(max),
 	@Description VARCHAR(max),
@@ -25,9 +25,7 @@ CREATE PROC crud_StandardFeed
 	@Type VARCHAR(max),
 	@Note VARCHAR(max),
 	@Active bit,
-	@CreateDate datetime,
 	@ModifiedDate datetime,
-	@CreatedBy VARCHAR(max),
 	@ModifiedBy VARCHAR(max),
 	@ExpirationDate datetime,
 	@Activate datetime,
@@ -43,12 +41,12 @@ AS
 			Type = @Type,
 			Note = @Note,
 			Active = @Active,
-			CreateDate = @CreateDate,
 			ModifiedDate = @ModifiedDate,
-			CreatedBy = @CreatedBy,
 			ModifiedBy = @ModifiedBy,
 			ExpirationDate = @ExpirationDate,
 			Activate = @Activate
 		WHERE Id = @Id;
 	END;
 GO
+
+--Needs to utilize TSQL "GetDate" 
