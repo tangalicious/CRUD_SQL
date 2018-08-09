@@ -1,5 +1,5 @@
 /*************************************************
-Name: crud_StandardFeedDelete
+Name: StandardFeedDelete
 Author: Chris Tang
 Created: 8/06/2018
 Description: Delete (CRUD)
@@ -8,13 +8,13 @@ Note: Delete by primary key Id
 
 **************************************************/
 
-IF OBJECT_ID('crud_StandardFeedDelete') IS NOT NULL
+IF OBJECT_ID('StandardFeedDelete') IS NOT NULL
 BEGIN
-	DROP PROC crud_StandardFeedDelete;
+	DROP PROC StandardFeedDelete;
 END; 
 GO
 
-CREATE PROC crud_StandardFeedDelete	
+CREATE PROC StandardFeedDelete	
 	@Id INT,
 AS
 		BEGIN
