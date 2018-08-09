@@ -17,8 +17,8 @@ GO
 CREATE PROC StandardFeedDelete	
 	@Id INT,
 AS
-		BEGIN
-				DELETE FROM StandardFeed
-				WHERE ID = @Id;
-		END;
+	BEGIN
+		DELETE FROM StandardFeed
+		WHERE ID = @Id;
+	END;
 GO
