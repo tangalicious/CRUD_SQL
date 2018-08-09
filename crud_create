@@ -1,5 +1,5 @@
 /*************************************************
-Name: crud_StandardFeedInsert
+Name: StandardFeedInsert
 Author: Chris Tang
 Created: 8/06/2018
 Description: Create (CRUD)
@@ -8,13 +8,13 @@ Note: Create new records by utlizing INSERT statements
 
 **************************************************/
 
-IF OBJECT_ID('Feed.crud_StandardFeedInsert') IS NOT NULL
+IF OBJECT_ID('Feed.StandardFeedInsert') IS NOT NULL
 BEGIN
 	DROP PROC
-		Feed.crud_StandardFeedInsert;
+		Feed.StandardFeedInsert;
 END; 
 GO
-CREATE PROC Feed.crud_StandardFeedInsert
+CREATE PROC Feed.StandardFeedInsert
 	(
 	@Id INT,
 	@Name VARCHAR(max),
