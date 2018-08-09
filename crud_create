@@ -39,56 +39,56 @@ AS
 BEGIN TRANSACTION
 	INSERT INTO Feed.StandardFeed
 	(
-			Name,
-			Description,
-			Creator,
-			BusinessOwner,
-			ExampleFile,
-			Type,
-			Note,
-			Active,
-			CreateDate,
-			ModifiedDate,
-			CreatedBy,
-			ModifiedBy,
-			ExpirationDate,
-			Activate
+		Name,
+		Description,
+		Creator,
+		BusinessOwner,
+		ExampleFile,
+		Type,
+		Note,
+		Active,
+		CreateDate,
+		ModifiedDate,
+		CreatedBy,
+		ModifiedBy,
+		ExpirationDate,
+		Activate
 	)
 	VALUES
 	(
-			@Name,
-			@Description,
-			@Creator,
-			@BusinessOwner,
-			@ExampleFile,
-			@Type,
-			@Note,
-			@Active,
-			@CreateDate,
-			@ModifiedDate,
-			@CreatedBy,
-			@ModifiedBy,
-			@ExpirationDate,
-			@Activate
+		@Name,
+		@Description,
+		@Creator,
+		@BusinessOwner,
+		@ExampleFile,
+		@Type,
+		@Note,
+		@Active,
+		@CreateDate,
+		@ModifiedDate,
+		@CreatedBy,
+		@ModifiedBy,
+		@ExpirationDate,
+		@Activate
 	)
 	
 DECLARE @StandardFeed.Id Int;
 Set @StandardFeed.Id = SCOPE_IDENTITY()
-		SELECT Id = @Id,
-			Name = @Name,
-			Description = @Description,
-			Creator = @Creator,
-			BusinessOwner = @BusinessOwner,
-			ExampleFile =  @ExampleFile,
-			Type = @Type,
-			Note = @Note,
-			Active = @Active,
-			CreateDate = @CreateDate,
-			ModifiedDate = @ModifiedDate,
-			CreatedBy = @CreatedBy,
-			ModifiedBy = @ModifiedBy,
-			ExpirationDate = @ExpirationDate,
-			Activate = @Activate
-		WHERE ID = @Id;
-	END;
+	SELECT Id = @Id,
+		Name = @Name,
+		Description = @Description,
+		Creator = @Creator,
+		BusinessOwner = @BusinessOwner,
+		ExampleFile =  @ExampleFile,
+		Type = @Type,
+		Note = @Note,
+		Active = @Active,
+		CreateDate = @CreateDate,
+		ModifiedDate = @ModifiedDate,
+		CreatedBy = @CreatedBy,
+		ModifiedBy = @ModifiedBy,
+		ExpirationDate = @ExpirationDate,
+		Activate = @Activate
+	WHERE ID = @Id;
+END;
 GO
