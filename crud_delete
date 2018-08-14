@@ -10,15 +10,16 @@ Note: Delete by primary key Id
 
 IF OBJECT_ID('StandardFeedDelete') IS NOT NULL
 BEGIN
-	DROP PROC StandardFeedDelete;
+	DROP PROC 
+		StandardFeedDelete;
 END; 
 GO
 
 CREATE PROC StandardFeedDelete	
-	@Id INT,
+	@StandardFeedId INT
 AS
 	BEGIN
-		DELETE FROM StandardFeed
-		WHERE ID = @Id;
+		DELETE FROM Feeds.StandardFeed
+		WHERE StandardFeedId = @StandardFeedId;
 	END;
 GO
