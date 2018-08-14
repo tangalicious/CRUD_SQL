@@ -16,7 +16,7 @@ END;
 GO
 
 CREATE PROC StandardFeedUpdate
-	@Id INT,
+	@StandardFeedId INT,
 	@Name VARCHAR(max),
 	@Description VARCHAR(max),
 	@Creator VARCHAR(max),
@@ -28,10 +28,10 @@ CREATE PROC StandardFeedUpdate
 	@ModifiedDate datetime,
 	@ModifiedBy VARCHAR(max),
 	@ExpirationDate datetime,
-	@Activate datetime,
+	@Activate datetime
 AS
 	BEGIN
-		UPDATE Feed.StandardFeedUpdate
+		UPDATE Feeds.StandardFeed
 		SET
 			Name = @Name,
 			Description = @Description,
@@ -41,10 +41,10 @@ AS
 			Type = @Type,
 			Note = @Note,
 			Active = @Active,
-			ModifiedDate = @GetDate(),
+			ModifiedDate = GetDate(),
 			ModifiedBy = @ModifiedBy,
 			ExpirationDate = @ExpirationDate,
 			Activate = @Activate
-		WHERE Id = @Id;
+		WHERE StandardFeedId = @StandardFeedId;
 	END;
 GO
