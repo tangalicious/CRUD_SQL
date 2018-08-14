@@ -10,15 +10,17 @@ Note: Read by primary key Id with SELECT statement
 
 IF OBJECT_ID('StandardFeedRead') IS NOT NULL
 BEGIN 
-    DROP PROC StandardFeedRead
+    DROP PROC 
+		StandardFeedRead
 END 
 GO
+
 CREATE PROC StandardFeedRead
-    @Id int
+    @StandardFeedId int
 AS 
 BEGIN 
 	SELECT
-		Id,
+		StandardFeedId,
 		Description,
 		Creator,
 		BusinessOwner,
@@ -31,8 +33,8 @@ BEGIN
 		CreatedBy,
 		ModifiedBy,
 		ExpirationDate,
-		Activate, 
+		Activate
 	FROM Feeds.StandardFeed
-	WHERE (Id = @Id)
+	WHERE (StandardFeedId = @StandardFeedId)
 END
 GO
